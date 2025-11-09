@@ -37,11 +37,11 @@ export class PushNotifcationController {
   async unregisterProviderDevice(@Body() body: { deviceToken: string }) {
     await this.deviceRegistrationService.unregisterProviderDevice(body.deviceToken);
   }
-  @Get('tokens')
-  @HttpCode(HttpStatus.OK)
-  async getDeviceToken(@Query() dto :getTokenDto) {
-   return await this.pushNotifcationService.getTokens(dto);
-  }
+  // @Get('tokens')
+  // @HttpCode(HttpStatus.OK)
+  // async getDeviceToken(@Query() dto :getTokenDto) {
+  //  return await this.pushNotifcationService.getTokens(dto);
+  // }
   }
 
 

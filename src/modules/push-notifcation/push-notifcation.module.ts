@@ -9,9 +9,12 @@ import { DeviceRegistration } from 'src/database/icare/entities/entities/DeviceR
 import { SecUsers } from 'src/database/icare/entities/entities/SecUsers';
 import { CenterUserDeviceRegistration } from 'src/database/icare/entities/entities/CenterUserDeviceRegistration';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { FirebaseModule } from '../firebase/firebase.module';
 
 @Module({
-  imports : [TypeOrmModule.forFeature([CenterUserDeviceRegistration, SecUsers,DeviceRegistration,Parent,ProviderDeviceRegistration,Provider], 'icare')],
+  imports : [TypeOrmModule.forFeature([CenterUserDeviceRegistration, SecUsers,DeviceRegistration,Parent,ProviderDeviceRegistration,Provider], 'icare'),
+  FirebaseModule,
+],
   controllers: [PushNotifcationController],
   providers: [PushNotifcationService,DeviceRegisterationService],
 })
