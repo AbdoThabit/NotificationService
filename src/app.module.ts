@@ -10,6 +10,7 @@ import { AppService } from './app.service';
 import { MssqlClientModule } from './config/mssql/mssql-client.module';
 //import { AppLoggerModule } from './common/logger/logger.module';
 import { PushNotifcationModule } from './modules/push-notifcation/push-notifcation.module';
+import { FirebaseModule } from './modules/firebase/firebase.module';
 
 
 
@@ -35,7 +36,7 @@ import { PushNotifcationModule } from './modules/push-notifcation/push-notifcati
          TypeOrmModule.forFeature([CenterUsers], 'isecure'),
          MssqlClientModule,
          PushNotifcationModule,
-
+        FirebaseModule,
             ],
             
   controllers: [AppController],
