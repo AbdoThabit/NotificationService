@@ -9,7 +9,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MssqlClientModule } from './config/mssql/mssql-client.module';
 //import { AppLoggerModule } from './common/logger/logger.module';
-import { PushNotifcationModule } from './push-notifcation/push-notifcation.module';
+import { PushNotifcationModule } from './modules/push-notifcation/push-notifcation.module';
 
 
 

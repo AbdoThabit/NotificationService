@@ -1,6 +1,6 @@
-import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, HttpStatus, Post, Query } from '@nestjs/common';
 import { PushNotifcationService } from './push-notifcation.service';
-import { CenterUserDeviceDto } from './dto';
+import { CenterUserDeviceDto, getTokenDto } from './dto';
 import { DeviceRegisterationService } from './device-registeration.service';
 
 @Controller('push-notifcation')
@@ -36,6 +36,11 @@ export class PushNotifcationController {
   @HttpCode(HttpStatus.OK)
   async unregisterProviderDevice(@Body() body: { deviceToken: string }) {
     await this.deviceRegistrationService.unregisterProviderDevice(body.deviceToken);
+  }
+  @Get('tokens')
+  @HttpCode(HttpStatus.OK)
+  async getDeviceToken(@Query() dto :getTokenDto) {
+   return await this.pushNotifcationService.getTokens(dto);
   }
   }
 
